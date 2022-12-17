@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import TodoList from "./TodoList";
 
 export default function Todos() {
+  const [todoData, setTodoData] = useState();
   const addTodo = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("https://jsonplaceholder.typicode.com/todos", {
       method: "POST",
       body: JSON.stringify({
         title: "Add todo",
@@ -16,7 +17,7 @@ export default function Todos() {
     })
       .then((response) => response.json())
       .then((json) => console.log(json));
-    console.log("Adding todo");
+    console.log("after adding", todoData);
   };
   return (
     <div>
