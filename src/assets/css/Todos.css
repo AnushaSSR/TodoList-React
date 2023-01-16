@@ -1,0 +1,43 @@
+.add-todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+.todo-div {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.todos-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px 2px 2px 2px;
+}
+
+.todos-data {
+  width: 80%;
+}
+
+.todos-actions {
+  display: flex;
+  width: 50%;
+}
+
+.update-todo {
+  background-color: green;
+  color: white;
+}
+
+.delete-todo {
+  background-color: red;
+  color: white;
+}
