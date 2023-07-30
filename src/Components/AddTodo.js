@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //component to add a new todo to list
 const AddTodo = (props) => {
@@ -31,17 +33,16 @@ const AddTodo = (props) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         //to add the value to state
         props.addTodo(json);
 
         //to clear of form value post submit
-
         setTodo({
           title: "",
           body: "",
         });
       });
+    toast("New todo added succesfully!");
   };
 
   return (
@@ -56,17 +57,7 @@ const AddTodo = (props) => {
             className="form-control"
             onChange={todoHandler}
             value={todo.title}
-            placeholder="Add a title"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="body"
-            className="form-control"
-            onChange={todoHandler}
-            value={todo.body}
-            placeholder="Add a body"
+            placeholder="Add a todo"
           />
         </div>
 
