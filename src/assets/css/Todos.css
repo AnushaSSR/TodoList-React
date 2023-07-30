@@ -1,3 +1,4 @@
+/* styling for the add todo form */
 .add-todo-form {
   display: flex;
   flex-direction: column;
@@ -8,12 +9,15 @@
   margin: 0 auto;
   padding: 10px;
 }
+
+/* Styling for todolist component */
 .todo-div {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .todos-container {
   width: 40%;
   display: flex;
@@ -27,6 +31,7 @@
   width: 80%;
 }
 
+/* Styling for todo action (update, delete) buttons */
 .todos-actions {
   display: flex;
   width: 50%;

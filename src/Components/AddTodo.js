@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //component to add a new todo to list
 const AddTodo = (props) => {
@@ -23,7 +23,6 @@ const AddTodo = (props) => {
       body: JSON.stringify({
         title: todo.title,
         body: todo.body,
-        id: 10000,
         userId: Math.floor(Math.random() * 100) + 200,
       }),
       headers: {
@@ -32,13 +31,16 @@ const AddTodo = (props) => {
     })
       .then((response) => response.json())
       .then((json) => {
+        console.log(json);
+        //to add the value to state
+        props.addTodo(json);
+
         //to clear of form value post submit
+
         setTodo({
           title: "",
           body: "",
         });
-        //to add the value to state
-        props.addTodo(json);
       });
   };
 

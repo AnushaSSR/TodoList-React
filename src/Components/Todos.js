@@ -9,17 +9,14 @@ const Todos = () => {
 
   //to fetch data from api on useEffect
   useEffect(() => {
-    (async () => {
-      await fetch(
-        "https://jsonplaceholder.typicode.com/todos?_page=1&_limit=10"
-      )
-        .then((response) => response.json())
-        .then((json) => setTodoData(json));
-    })();
-  });
+    fetch("https://jsonplaceholder.typicode.com/todos?_page=1&_limit=10")
+      .then((response) => response.json())
+      .then((json) => setTodoData(json));
+  }, []);
 
   //handler to get data from children component - backpropping
   const addTodo = (payload) => {
+    console.log(payload);
     //data to add upon post call to API fetched from child
     const newTodo = {
       userId: payload.userId,
@@ -29,6 +26,8 @@ const Todos = () => {
     };
 
     const updatedTodos = [...todoData, newTodo];
+    console.log(updatedTodos);
+
     //set the todoDta to data from add Todo component
     setTodoData(updatedTodos);
   };
